@@ -1,0 +1,222 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StaffMasterPage.master.cs" Inherits="Staff_StaffMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DigitalBull | Your Digital Partner</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+
+        var toastTimer;
+
+        function ShowMessage(message, type) {
+
+            var toast = document.getElementById("toastMessage");
+            var title = document.getElementById("toastTitle");
+            var text = document.getElementById("toastText");
+            var icon = document.getElementById("toastIcon");
+
+            if (!toast) return;
+
+            // Clear previous timer
+            clearTimeout(toastTimer);
+
+            // Set message
+            text.innerText = message;
+
+            // Remove previous type classes
+            toast.classList.remove(
+                "toast-success",
+                "toast-error",
+                "toast-warning",
+                "toast-info"
+            );
+
+            // SUCCESS
+            if (type === "Success") {
+
+                title.innerText = "Success";
+                icon.className = "bi bi-check-circle";
+
+                toast.classList.add("toast-success");
+            }
+
+            // ERROR
+            else if (type === "Error") {
+
+                title.innerText = "Error";
+                icon.className = "bi bi-x-circle";
+
+                toast.classList.add("toast-error");
+            }
+
+            // WARNING
+            else if (type === "Warning") {
+
+                title.innerText = "Warning";
+                icon.className = "bi bi-exclamation-circle";
+
+                toast.classList.add("toast-warning");
+            }
+
+            // INFO
+            else {
+
+                title.innerText = "Information";
+                icon.className = "bi bi-info-circle";
+
+                toast.classList.add("toast-info");
+            }
+
+            // Show toast
+            toast.classList.add("show");
+
+            // Hide automatically after 1 second
+            toastTimer = setTimeout(function () {
+                hideToast();
+            }, 1500);
+        }
+
+
+        function hideToast() {
+
+            var toast = document.getElementById("toastMessage");
+
+            if (!toast) return;
+
+            toast.classList.remove("show");
+        }
+
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="admin-shell">
+            <div class="sidebar-backdrop" data-sidebar-close></div>
+
+            <aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
+
+                <div class="sidebar-header">
+                    <a class="brand-mark" href="#" aria-label="DigitalBull dashboard">
+                        <span class="brand-icon">
+
+                            <img src="assets/digital-bull-logo.webp" alt="DigitalBull">
+                        </span>
+                        <span class="brand-copy">
+                            <span class="brand-title" runat="server" id="staff_name">DigitalBull</span>
+
+                        </span>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a class="nav-link" href="dashboard.aspx" aria-current="page">
+                        <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a class="nav-link" href="manage-add-work.aspx">
+                        <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                        <span class="nav-text">Add Work</span>
+                    </a>
+                    <a class="nav-link" href="assign-client.aspx">
+                        <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
+                        <span class="nav-text">Assign Client</span>
+                    </a>
+                    <a class="nav-link" href="assign-work.aspx">
+                        <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
+                        <span class="nav-text">Assign Work</span>
+                    </a>
+                    <a class="nav-link" id="lcalender" runat="server" href="layout-calender.aspx">
+                        <span class="nav-icon"><i class="bi bi-calendar" aria-hidden="true"></i></span>
+                        <span class="nav-text">Layout Calender</span>
+                    </a>
+                    <a class="nav-link" id="socialmedia" runat="server" href="social-media.aspx">
+                        <span class="nav-icon"><i class="bi bi-card-checklist" aria-hidden="true"></i></span>
+                        <span class="nav-text">Social Media</span>
+                    </a>
+                    <a class="nav-link" id="socialmediareport" runat="server" href="social-media-report.aspx">
+                        <span class="nav-icon"><i class="bi bi-card-checklist" aria-hidden="true"></i></span>
+                        <span class="nav-text">Social Media Report</span>
+                    </a>
+                    <a class="nav-link" id="llcalender" runat="server" href="client-approval.aspx">
+                        <span class="nav-icon"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
+                        <span class="nav-text">Client Approval</span>
+                    </a>
+                    <a class="nav-link" id="ticket" runat="server" href="client-ticket.aspx">
+                        <span class="nav-icon"><i class="bi bi-card-text" aria-hidden="true"></i></span>
+                        <span class="nav-text">Ticket</span>
+                    </a>
+                </nav>
+
+                <div class="sidebar-user">
+                    <img class="avatar-img avatar-md sidebar-user-avatar" src="assets/images/avatar/profile.png">
+                    <strong runat="server" id="staff_name2">Jay Singh</strong>
+                    <small>Active Workspace</small>
+                </div>
+
+                <div class="sidebar-footer">
+                    <span class="status-dot"></span>
+                    <span class="sidebar-footer-text">Active</span>
+                </div>
+
+            </aside>
+
+            <div class="admin-main">
+
+                <nav class="navbar admin-navbar navbar-expand bg-white">
+                    <div class="container-fluid px-3 px-lg-4">
+                        <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-controls="adminSidebar" aria-expanded="true" aria-label="Toggle sidebar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <div class="navbar-actions ms-auto">
+                            
+
+
+                            <div class="dropdown">
+                                <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="avatar-img avatar-sm" src="assets/images/avatar/profile.png">
+                                    <span class="profile-name d-none d-sm-inline" runat="server" id="staff_name3">Jay Singh</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="logout.aspx">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <main class="dashboard-content">
+
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+
+    </form>
+
+    <footer class="admin-footer">
+    </footer>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
