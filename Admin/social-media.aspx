@@ -38,6 +38,7 @@
             font-weight: 600;
         }
     </style>
+    
     <!-- Toast Container -->
     <div id="toastContainer" class="toast-container">
 
@@ -82,16 +83,24 @@
                 <table class="table align-middle mb-0" id="ordersTable" data-searchable-table>
                     <thead>
                         <tr>
-
                             <th>Name</th>
                             <th>Action</th>
-                            <th>View</th>
-                            <th>Subscribe</th>
-                            <th>Like</th>
-                            <th>Comment</th>
-                            <th>Follower</th>
-                            <th>Share</th>
-                            <th>Review</th>
+                            <th>FB Follower</th>
+                            <th>IG Follower</th>
+                            <th>YT Subscribe</th>
+                            <th>FB View</th>
+                            <th>IG View</th>
+                            <th>YT View</th>
+                            <th>FB Like</th>
+                            <th>IG Like</th>
+                            <th>YT Like</th>
+                            <th>FB Comment</th>
+                            <th>IG Comment</th>
+                            <th>YT Comment</th>
+                            <th>FB Share</th>
+                            <th>IG Share</th>
+                            <th>YT Share</th>
+                            <th>GMB Review</th>
                             <th>Month</th>
                         </tr>
                     </thead>
@@ -100,7 +109,7 @@
                         <asp:Repeater ID="rptbinddata" runat="server" OnItemCommand="rptbinddata_ItemCommand">
                             <ItemTemplate>
                                 <tr>
-                                    <td class="fw-semibold"><%# Eval("client_name") %></td>
+                                    <td class="fw-semibold"><a href='<%# "show-client-report.aspx?ref=" + Server.UrlEncode(Convert.ToString(Eval("client_name"))) %>'><%# Eval("client_name") %></a></td>
                                     <td>
                                         <a href='<%# Eval("fb") %>' style="color: blue;"><i class="fa fa-facebook-square"></i></a>|
                                         <a href='<%# Eval("insta") %>' style="color: #b52165;"><i class="fa fa-instagram"></i></a>|
@@ -109,15 +118,23 @@
                                         <a href='<%# Eval("linkedin") %>' style="color: #1083b8;"><i class="fa fa-linkedin-square"></i></a>|
                                         <a href='<%# Eval("twitter") %>' style="color: #0dd5ea;"><i class="fa fa-twitter-square"></i></a>
                                     </td>
-                                    <td><%# Eval("views2") %></td>
-                                    <td><%# Eval("subscribe2") %></td>
-                                    <td><%# Eval("likes2") %></td>
-                                    <td><%# Eval("cmt2") %></td>
-                                    <td><%# Eval("followers2") %></td>
-                                    <td><%# Eval("group_share2") %></td>
-                                    <td><%# Eval("review2") %></td>
+                                    <td><%# Eval("fb_followers") %></td>
+                                    <td><%# Eval("insta_followers") %></td>
+                                    <td><%# Eval("yt_subscriber") %></td>
+                                    <td><%# Eval("fb_views") %></td>
+                                    <td><%# Eval("insta_views") %></td>
+                                    <td><%# Eval("yt_views") %></td>
+                                    <td><%# Eval("fb_likes") %></td>
+                                    <td><%# Eval("insta_likes") %></td>
+                                    <td><%# Eval("yt_likes") %></td>
+                                    <td><%# Eval("fb_cmt") %></td>
+                                    <td><%# Eval("insta_cmt") %></td>
+                                    <td><%# Eval("yt_cmt") %></td>
+                                    <td><%# Eval("fb_group_share") %></td>
+                                    <td><%# Eval("insta_group_share") %></td>
+                                    <td><%# Eval("yt_group_share") %></td>
+                                    <td><%# Eval("gmb_review") %></td>
                                     <td><%# Eval("month_name") %></td>
-
                                 </tr>
 
                             </ItemTemplate>

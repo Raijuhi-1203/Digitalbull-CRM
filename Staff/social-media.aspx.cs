@@ -72,22 +72,30 @@ public partial class Staff_social_media : System.Web.UI.Page
 
     protected void btnsend_ServerClick(object sender, EventArgs e)
     {
-        if (review.Text.Length > 0 && gshare.Text.Length > 0 && follower.Text.Length > 0 && views.Text.Length > 0 && subscribe.Text.Length > 0 && like.Text.Length > 0 && cmt.Text.Length > 0)
+        if (gmbreview.Text.Length > 0 && fbgshare.Text.Length > 0 && instagshare.Text.Length > 0 && ytgshare.Text.Length > 0 && fbfollower.Text.Length > 0 && instafollower.Text.Length > 0 && fbviews.Text.Length > 0 && instaviews.Text.Length > 0 && ytviews.Text.Length > 0 && ytsubscribe.Text.Length > 0 && fblike.Text.Length > 0 && instalike.Text.Length > 0 && ytlike.Text.Length > 0 && fbcmt.Text.Length > 0 && instacmt.Text.Length > 0 && ytcmt.Text.Length > 0)
         {
-            int success = mst.Add_Social_Media(dblclient.SelectedItem.Text, views.Text, subscribe.Text, like.Text, cmt.Text, follower.Text, gshare.Text, review.Text, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.ToString("HH:mm:ss"));
+            int success = mst.Add_Social_Media(dblclient.SelectedItem.Text, fbviews.Text, instaviews.Text, ytviews.Text, ytsubscribe.Text, fblike.Text, instalike.Text, ytlike.Text, fbcmt.Text, instacmt.Text, ytcmt.Text, fbfollower.Text, instafollower.Text, ytgshare.Text, fbgshare.Text, instagshare.Text, gmbreview.Text, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.ToString("HH:mm:ss"));
 
             if (success > 0)
             {
                 ShowMessage("Data have been saved.", MessageType.Success);
 
-                views.Text = string.Empty;
-                subscribe.Text = string.Empty;
-                like.Text = string.Empty;
-                subscribe.Text = string.Empty;
-                cmt.Text = string.Empty;
-                follower.Text = string.Empty;
-                gshare.Text = string.Empty;
-                review.Text = string.Empty;
+                fbviews.Text = string.Empty;
+                instaviews.Text = string.Empty;
+                ytviews.Text = string.Empty;
+                ytsubscribe.Text = string.Empty;
+                fblike.Text = string.Empty;
+                instalike.Text = string.Empty;
+                ytlike.Text = string.Empty;
+                fbcmt.Text = string.Empty;
+                instacmt.Text = string.Empty;
+                ytcmt.Text = string.Empty;
+                fbfollower.Text = string.Empty;
+                instafollower.Text = string.Empty;
+                ytgshare.Text = string.Empty;
+                fbgshare.Text = string.Empty;
+                instagshare.Text = string.Empty;
+                gmbreview.Text = string.Empty;
                 dblclient.SelectedIndex = 0;
             }
         }

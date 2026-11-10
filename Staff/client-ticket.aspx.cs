@@ -39,7 +39,7 @@ public partial class Staff_client_ticket : System.Web.UI.Page
 
     private void BindData()
     {
-        rptbinddata.DataSource = GetData("SELECT * FROM client_ticket where ticket_status!='Closed' and ('"+ Session["role"].ToString() + "' = 'Developer', 'Manager', 'Social Media Manager' AND ticket_type = 'Support')");
+        rptbinddata.DataSource = GetData("SELECT * FROM client_ticket where ticket_status!='Closed' and (('" + Session["role"].ToString() + "' = 'Developer') or ('" + Session["role"].ToString() + "' = 'Manager') or ('" + Session["role"].ToString() +"' = 'Social Media Manager')) AND ticket_type = 'Support'");
        // rptbinddata.DataSource = GetData("SELECT * FROM client_ticket where staff_id='" + Session["name"].ToString() + "'");
         rptbinddata.DataBind();
     }

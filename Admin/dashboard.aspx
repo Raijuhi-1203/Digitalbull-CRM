@@ -564,6 +564,255 @@
         }
     </style>
 
+    <style>
+        /* PENDING WORK PANEL */
+
+        .pending-work-panel {
+            background: #fff;
+            border: 1px solid #dce5f2;
+            border-radius: 17px;
+            padding: 16px 20px;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(30, 50, 80, .04);
+        }
+
+        .pending-work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pending-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pending-icon {
+            width: 49px;
+            height: 49px;
+            background: linear-gradient(135deg, #5268ff, #7050e8);
+            color: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .pending-heading h2 {
+            font-size: 19px;
+            font-weight: 800;
+            margin: 0;
+            color: #172b50;
+        }
+
+        .pending-heading p {
+            font-size: 12px;
+            color: #8190a9;
+            margin: 4px 0 0;
+        }
+
+        .pending-date {
+            border: 1px solid #dce5f2;
+            padding: 11px 15px;
+            border-radius: 13px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #243c62;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        /* TABLE */
+
+        .pending-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .pending-table {
+            width: 100%;
+            min-width: 950px;
+            border-collapse: collapse;
+        }
+
+            .pending-table thead {
+                background: #eff5ff;
+            }
+
+            .pending-table th {
+                padding: 13px 10px;
+                font-size: 11px;
+                font-weight: 800;
+                color: #587397;
+                text-align: left;
+                text-transform: uppercase;
+            }
+
+                .pending-table th:first-child {
+                    border-radius: 12px 0 0 12px;
+                }
+
+                .pending-table th:last-child {
+                    border-radius: 0 12px 12px 0;
+                }
+
+            .pending-table tbody td {
+                padding: 16px 10px;
+                border-bottom: 1px solid #e4ebf5;
+                vertical-align: middle;
+            }
+
+            .pending-table tbody tr:last-child td {
+                border-bottom: 0;
+            }
+
+        .pending-client {
+            font-size: 12px;
+            font-weight: 750;
+            color: #172b45;
+            min-width: 210px;
+        }
+
+        /* POST TYPE */
+
+        .post-type-box {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .post-type-icon {
+            width: 39px;
+            height: 39px;
+            background: #edf1ff;
+            color: #5265ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .post-type-info small {
+            display: block;
+            font-size: 10px;
+            color: #8998b0;
+            margin-bottom: 5px;
+        }
+
+        .post-type-info strong {
+            font-size: 13px;
+            color: #172b45;
+        }
+
+        .post-description {
+            background: #f5f7fa;
+            border-left: 3px solid #dce4ef;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 7px;
+            font-size: 11px;
+            color: #526174;
+            min-width: 180px;
+        }
+
+        /* STATUS */
+
+        .pending-status,
+        .pending-post-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: #fff5df;
+            border: 1px solid #ffd58a;
+            color: #e58a00;
+            border-radius: 11px;
+            font-size: 11px;
+            font-weight: 750;
+            white-space: nowrap;
+        }
+
+        /* ACTION BUTTONS */
+
+        .pending-actions {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            white-space: nowrap;
+        }
+
+        .btn-progress,
+        .btn-schedule,
+        .btn-done {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 13px;
+            border-radius: 11px;
+            text-decoration: none !important;
+            font-size: 11px;
+            font-weight: 750;
+            transition: .2s ease;
+        }
+
+        .btn-progress {
+            background: #1671e9;
+            color: white !important;
+            box-shadow: 0 5px 12px rgba(22, 113, 233, .18);
+        }
+
+            .btn-progress:hover {
+                background: #075bc9;
+            }
+
+        .btn-schedule {
+            background: white;
+            border: 1px solid #dce5f2;
+            color: #294363 !important;
+        }
+
+            .btn-schedule:hover {
+                background: #edf3ff;
+            }
+
+        .btn-done {
+            background: #08a268;
+            color: white !important;
+        }
+
+            .btn-done:hover {
+                background: #078653;
+            }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            .pending-work-panel {
+                padding: 13px;
+            }
+
+            .pending-work-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .pending-heading h2 {
+                font-size: 16px;
+            }
+
+            .pending-date {
+                align-self: flex-start;
+            }
+        }
+    </style>
 
     <!-- ==============================
          TOAST
@@ -799,6 +1048,108 @@
 
             </div>
 
+
+            <!-- PENDING SOCIAL MEDIA WORK -->
+            <div class="pending-work-panel">
+
+                <div class="pending-work-header">
+
+                    <div class="pending-heading">
+                        <div class="pending-icon">
+                            <i class="bi bi-grid"></i>
+                        </div>
+
+                        <div>
+                            <h2>Today Social Media Work</h2>
+                            <p>Check the latest posts and their status for all clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="pending-date">
+                        <i class="bi bi-calendar3"></i>
+                        <%= DateTime.Now.ToString("dd MMM yyyy") %>
+                    </div>
+
+                </div>
+
+                <div class="pending-table-wrapper">
+
+                    <table class="pending-table">
+
+                        <thead>
+                            <tr>
+                                <th>Client</th>
+                                <th>Post Type</th>
+                                <th>Status</th>
+                                <th>Post Date</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <asp:Repeater ID="rptPendingWork" runat="server" OnItemCommand="rptPendingWork_ItemCommand">
+
+                                <ItemTemplate>
+
+                                    <tr>
+
+                                        <!-- CLIENT -->
+                                        <td class="pending-client">
+                                            <%# Eval("client_name") %>
+                                        </td>
+
+                                        <!-- POST TYPE -->
+                                        <td>
+                                            <div class="post-type-box">
+
+                                                <div class="post-type-icon">
+                                                    <i class="bi bi-list"></i>
+                                                </div>
+
+                                                <div class="post-type-info">
+                                                    <small>CONTENT TYPE</small>
+                                                    <strong><%# Eval("post_type") %></strong>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="post-description">
+                                                <%# Eval("post_note") %>
+                                            </div>
+                                        </td>
+
+                                        <!-- STATUS -->
+                                        <td>
+                                            <span class="pending-status">
+                                                <i class="bi bi-hourglass-split"></i>
+                                                <%# Eval("post_status") %>
+                                            </span>
+                                        </td>
+
+                                        <!-- DATE -->
+                                        <td>
+                                            <span class="pending-post-date">
+                                                <i class="bi bi-clock"></i>
+                                                <%# Eval("post_date", "{0:yyyy-MM-dd}") %>
+                                            </span>
+                                        </td>
+
+                                        
+
+                                    </tr>
+
+                                </ItemTemplate>
+
+                            </asp:Repeater>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
 
             <!-- ==============================
                  CLIENTS

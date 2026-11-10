@@ -144,6 +144,10 @@
                         <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
                         <span class="nav-text">Staff</span>
                     </a>
+                    <a class="nav-link" href="layout-calender.aspx">
+                        <span class="nav-icon"><i class="bi bi-image" aria-hidden="true"></i></span>
+                        <span class="nav-text">Layout Calender</span>
+                    </a>
                     <a class="nav-link" href="assign-client.aspx">
                         <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
                         <span class="nav-text">Assign Client</span>

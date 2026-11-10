@@ -906,7 +906,7 @@ public class Master
         return (RowsAffected);
     }
 
-    public int Add_Social_Media(string client_name, string views2, string subscribe2, string likes2, string cmt2, string followers2, string group_share2, string review2, string create_date, string create_time)
+    public int Add_Social_Media(string client_name, string fb_views, string insta_views, string yt_views, string yt_subscriber, string fb_likes, string insta_likes, string yt_likes, string fb_cmt, string insta_cmt, string yt_cmt, string fb_followers, string insta_followers, string yt_group_share, string fb_group_share, string insta_group_share, string gmb_review, string create_date, string create_time)
     {
         con.Close();
         con.Open();
@@ -915,17 +915,25 @@ public class Master
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into social_media_marketing_report (client_name,views2,subscribe2,likes2,cmt2,followers2,group_share2,review2,create_date,create_time) values (@client_name,@views2,@subscribe2,@likes2,@cmt2,@followers2,@group_share2,@review2,@create_date,@create_time)";
+            cmd.CommandText = "insert into social_media_marketing_report (client_name,fb_views,insta_views,yt_views,yt_subscriber,fb_likes,insta_likes,yt_likes,fb_cmt,insta_cmt,yt_cmt,fb_followers,insta_followers,yt_group_share,fb_group_share,insta_group_share,gmb_review,create_date,create_time) values (@client_name,@fb_views,@insta_views,@yt_views,@yt_subscriber,@fb_likes,@insta_likes,@yt_likes,@fb_cmt,@insta_cmt,@yt_cmt,@fb_followers,@insta_followers,@yt_group_share,@fb_group_share,@insta_group_share,@gmb_review,@create_date,@create_time)";
             cmd.CommandType = CommandType.Text;
-
             cmd.Parameters.AddWithValue("@client_name", client_name);
-            cmd.Parameters.AddWithValue("@views2", views2);
-            cmd.Parameters.AddWithValue("@subscribe2", subscribe2);
-            cmd.Parameters.AddWithValue("@likes2", likes2);
-            cmd.Parameters.AddWithValue("@cmt2", cmt2);
-            cmd.Parameters.AddWithValue("@followers2", followers2);
-            cmd.Parameters.AddWithValue("@group_share2", group_share2);
-            cmd.Parameters.AddWithValue("@review2", review2);
+            cmd.Parameters.AddWithValue("@fb_views", fb_views);
+            cmd.Parameters.AddWithValue("@insta_views", insta_views);
+            cmd.Parameters.AddWithValue("@yt_views", yt_views);
+            cmd.Parameters.AddWithValue("@yt_subscriber", yt_subscriber);
+            cmd.Parameters.AddWithValue("@fb_likes", fb_likes);
+            cmd.Parameters.AddWithValue("@insta_likes", insta_likes);
+            cmd.Parameters.AddWithValue("@yt_likes", yt_likes);
+            cmd.Parameters.AddWithValue("@fb_cmt", fb_cmt);
+            cmd.Parameters.AddWithValue("@insta_cmt", insta_cmt);
+            cmd.Parameters.AddWithValue("@yt_cmt", yt_cmt);
+            cmd.Parameters.AddWithValue("@fb_followers", fb_followers);
+            cmd.Parameters.AddWithValue("@insta_followers", insta_followers);
+            cmd.Parameters.AddWithValue("@fb_group_share", fb_group_share);
+            cmd.Parameters.AddWithValue("@insta_group_share", insta_group_share);
+            cmd.Parameters.AddWithValue("@yt_group_share", yt_group_share);
+            cmd.Parameters.AddWithValue("@gmb_review", gmb_review);
             cmd.Parameters.AddWithValue("@create_date", create_date);
             cmd.Parameters.AddWithValue("@create_time", create_time);
 

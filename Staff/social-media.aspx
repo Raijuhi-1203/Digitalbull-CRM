@@ -49,40 +49,85 @@
                             <asp:DropDownList ID="dblclient" AppendDataBoundItems="True" class="selectpicker form-control" data-live-search="true" runat="server">
                             </asp:DropDownList>
                         </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label" for="notes">GMB Review</label>
+                            <asp:TextBox runat="server" class="form-control" ID="gmbreview"></asp:TextBox>
+                        </div>
 
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Facebook Views</label>
+                            <asp:TextBox runat="server" class="form-control" ID="fbviews"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Facebook Like</label>
+                            <asp:TextBox runat="server" class="form-control" ID="fblike"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Facebook Comment</label>
+                            <asp:TextBox runat="server" class="form-control" ID="fbcmt"></asp:TextBox>
+                        </div>
+                        
                         <div class="col-md-3">
-                            <label class="form-label" for="notes">Views</label>
-                            <asp:TextBox runat="server" class="form-control" ID="views"></asp:TextBox>
+                            <label class="form-label" for="notes">Facebook Follower</label>
+                            <asp:TextBox runat="server" class="form-control" ID="fbfollower"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <label class="form-label" for="notes">Facebook Group Share</label>
+                            <asp:TextBox runat="server" class="form-control" ID="fbgshare"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Instagram Views</label>
+                            <asp:TextBox runat="server" class="form-control" ID="instaviews"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Instagram Like</label>
+                            <asp:TextBox runat="server" class="form-control" ID="instalike"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Instagram Comment</label>
+                            <asp:TextBox runat="server" class="form-control" ID="instacmt"></asp:TextBox>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <label class="form-label" for="notes">Instagram Follower</label>
+                            <asp:TextBox runat="server" class="form-control" ID="instafollower"></asp:TextBox>
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label" for="notes">Subscribe</label>
-                            <asp:TextBox runat="server" class="form-control" ID="subscribe"></asp:TextBox>
+                            <label class="form-label" for="notes">Instagram Group Share</label>
+                            <asp:TextBox runat="server" class="form-control" ID="instagshare"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Youtube Views</label>
+                            <asp:TextBox runat="server" class="form-control" ID="ytviews"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Youtube Subscribe</label>
+                            <asp:TextBox runat="server" class="form-control" ID="ytsubscribe"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label" for="notes">Youtube Like</label>
+                            <asp:TextBox runat="server" class="form-control" ID="ytlike"></asp:TextBox>
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label" for="notes">Like</label>
-                            <asp:TextBox runat="server" class="form-control" ID="like"></asp:TextBox>
+                            <label class="form-label" for="notes">Youtube Comment</label>
+                            <asp:TextBox runat="server" class="form-control" ID="ytcmt"></asp:TextBox>
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label" for="notes">Comment</label>
-                            <asp:TextBox runat="server" class="form-control" ID="cmt"></asp:TextBox>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label" for="notes">Follower</label>
-                            <asp:TextBox runat="server" class="form-control" ID="follower"></asp:TextBox>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label" for="notes">Group Share</label>
-                            <asp:TextBox runat="server" class="form-control" ID="gshare"></asp:TextBox>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label" for="notes">Review</label>
-                            <asp:TextBox runat="server" class="form-control" ID="review"></asp:TextBox>
+                            <label class="form-label" for="notes">Youtube Group Share</label>
+                            <asp:TextBox runat="server" class="form-control" ID="ytgshare"></asp:TextBox>
                         </div>
 
                     </div>
