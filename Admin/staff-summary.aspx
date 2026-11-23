@@ -275,60 +275,141 @@
        WORK DETAILS
     ===================================== */
 
+
         .work-list {
-            padding: 5px 22px 15px;
-        }
-
-        .work-item {
             display: flex;
-            gap: 14px;
-            padding: 17px 0;
-            border-bottom: 1px solid #f1f3f6;
+            flex-direction: column;
+            gap: 7px;
         }
 
-            .work-item:last-child {
-                border-bottom: 0;
+        /* Main Row */
+        .work-log-row {
+            display: grid;
+            grid-template-columns: 165px 115px 100px minmax(200px, 1fr);
+            align-items: center;
+            gap: 14px;
+            padding: 9px 12px;
+            background: #fff;
+            border: 1px solid #edf0f4;
+            border-radius: 8px;
+            transition: all .2s ease;
+            margin: 9px;
+        }
+
+            .work-log-row:hover {
+                background: #fafbff;
+                border-color: #dfe3f5;
             }
 
+        /* Client */
+        .work-client-info {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 0;
+        }
+
         .work-icon {
-            width: 40px;
-            height: 40px;
-            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 11px;
-            background: #f1f5ff;
-            color: #4f46e5;
+            background: #f0f2ff;
+            color: #5969d9;
+            border-radius: 7px;
+            font-size: 14px;
         }
 
-        .work-content {
-            flex: 1;
+        .client-info {
+            min-width: 0;
         }
 
-        .work-title {
-            margin: 0;
-            color: #263247;
-            font-size: 13px;
+        .client-label,
+        .details-label {
+            display: block;
+            font-size: 9px;
             font-weight: 700;
+            color: #98a0ae;
+            letter-spacing: .5px;
+            margin-bottom: 2px;
+        }
+
+        .work-client {
+            font-size: 12px;
+            font-weight: 700;
+            color: #344054;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Date */
+        .work-date {
+            font-size: 11px;
+            color: #667085;
+            white-space: nowrap;
+        }
+
+            .work-date i {
+                color: #7c88dc;
+                margin-right: 4px;
+            }
+
+        /* Working Time */
+        .work-time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #5969d9;
+            white-space: nowrap;
+        }
+
+            .work-time-badge i {
+                font-size: 13px;
+            }
+
+        /* Work Details */
+        .work-details-content {
+            min-width: 0;
         }
 
         .work-description {
-            margin: 5px 0 0;
-            color: #8c95a6;
             font-size: 12px;
             line-height: 1.5;
+            color: #475467;
+            margin: 0;
+            white-space: normal;
+            overflow-wrap: anywhere;
         }
 
-        .work-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 7px;
-            color: #000;
-            font-size: 12px;
-            font-weight: 600;
+        /* Responsive */
+        @media(max-width: 767px) {
+            .work-log-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .work-details-content {
+                grid-column: 1 / -1;
+            }
         }
+
+        @media(max-width: 420px) {
+            .work-log-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .work-details-content {
+                grid-column: auto;
+            }
+        }
+
 
 
         /* =====================================
@@ -641,44 +722,107 @@
    WORK DETAILS
 ========================================== */
 
-        .work-details-box {
-            display: flex;
-            align-items: flex-start;
-            gap: 11px;
-            padding: 13px 14px;
-            background: #f8f9fb;
-            border: 1px solid #f0f1f4;
-            border-radius: 12px;
+
+        /* Updated horizontal layout */
+        .work-log-row {
+            display: grid;
+            grid-template-columns: 135px 100px 90px minmax(160px, 1fr) 130px 155px 55px;
+            align-items: center;
+            gap: 9px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #edf0f4;
+            border-radius: 8px;
+            margin-bottom: 7px;
         }
 
-        .details-icon {
-            width: 30px;
-            height: 30px;
-            flex-shrink: 0;
+        /* Status */
+        .work-status {
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            background: #ffffff;
-            color: #667085;
-            font-size: 13px;
+            gap: 4px;
         }
 
-        .details-label {
-            display: block;
-            margin-bottom: 4px;
-            color: #a0a7b5;
-            font-size: 8px;
-            font-weight: 800;
-            letter-spacing: .7px;
+        .status-btn {
+            padding: 5px 7px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: 600;
+            border: 1px solid #e6e9ef;
+            background: #fff;
+            cursor: pointer;
+            white-space: nowrap;
         }
 
-        .work-description {
-            margin: 0;
-            color: #5f697a;
-            font-size: 12px;
-            line-height: 1.6;
+            .status-btn.pending {
+                color: #d18a20;
+            }
+
+                .status-btn.pending.active {
+                    background: #fff5df;
+                    border-color: #f1d59e;
+                }
+
+            .status-btn.done {
+                color: #159768;
+            }
+
+                .status-btn.done.active {
+                    background: #e9f8f1;
+                    border-color: #a9e4ca;
+                }
+
+        /* Remark */
+        .work-remark {
+            min-width: 0;
         }
+
+        .remark-input {
+            width: 100%;
+            height: 30px;
+            padding: 4px 8px;
+            border: 1px solid #e5e8ef;
+            border-radius: 5px;
+            font-size: 11px;
+            outline: none;
+        }
+
+            .remark-input:focus {
+                border-color: #6575d9;
+            }
+
+        /* Submit */
+        .work-action {
+            text-align: center;
+        }
+
+        .remark-submit {
+            height: 30px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background: #5969d9;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+            .remark-submit:hover {
+                background: #4555c5;
+            }
+
+        /* Mobile */
+        @media(max-width: 1100px) {
+            .work-log-row {
+                min-width: 1100px;
+            }
+
+            .work-list {
+                overflow-x: auto;
+            }
+        }
+
 
 
         /* ==========================================
@@ -764,6 +908,56 @@
                 flex-direction: column;
             }
         }
+
+        .work-details-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .work-details-date {
+            font-size: 17px;
+            font-weight: 800;
+            color: #172033;
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+            .work-details-date i {
+                color: #2563eb;
+                font-size: 17px;
+            }
+
+        .details-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #8c95a6;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .8px;
+        }
+
+        .work-status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+            .work-status-badge.done {
+                background: #e8f8ef;
+                color: #159768;
+                border: 1px solid #bcebd0;
+            }
+
+            .work-status-badge.pending {
+                background: #fff5df;
+                color: #d18a20;
+                border: 1px solid #f1dba9;
+            }
     </style>
 
     <div class="staff-summary-page">
@@ -859,8 +1053,8 @@
 
                 </div>
 
-                <div class="work-list">
 
+                <div class="work-list">
 
                     <asp:Repeater ID="rptbinddata"
                         runat="server"
@@ -868,91 +1062,59 @@
 
                         <ItemTemplate>
 
-                            <div class="work-log-card">
+                            <div class="work-log-row">
 
-                                <!-- Left Timeline -->
-                                <div class="work-timeline">
-
+                                <!-- Client -->
+                                <div class="work-client-info">
                                     <div class="work-icon">
                                         <i class="bi bi-briefcase-fill"></i>
                                     </div>
 
-                                    <div class="timeline-line"></div>
+                                    <div class="client-info">
+                                        <span class="client-label">CLIENT</span>
+                                        <h3 class="work-client">
+                                            <%# Eval("client_id") %>
+                        </h3>
+                                    </div>
+                                </div>
 
+                                <!-- Date -->
+                                <div class="work-date">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <%# Eval("create_date", "{0:dd MMM yyyy}") %>
+                                </div>
+
+                                <!-- Working Time -->
+                                <div class="work-time-badge">
+                                    <i class="bi bi-clock"></i>
+                                    <%# Eval("working_time") %>
+                                </div>
+
+                                <!-- Work Details -->
+                                <div class="work-details-content">
+                                    <span class="details-label">WORK DETAILS</span>
+                                    <p class="work-description">
+                                        <%# Eval("work_details") %>
+                                    </p>
                                 </div>
 
 
-                                <!-- Main Content -->
-                                <div class="work-log-content">
-
-                                    <!-- Top -->
-                                    <div class="work-log-top">
-
-                                        <div>
-
-                                            <span class="client-label">CLIENT
-                                            </span>
-
-                                            <h3 class="work-client">
-                                                <%# Eval("client_id") %>
-                                            </h3>
-
-                                        </div>
-
-                                        <span class="work-time-badge">
-
-                                            <i class="bi bi-clock"></i>
-
-                                            <%# Eval("working_time") %>
-
-                                        </span>
-
-                                    </div>
-
-
-                                    <!-- Work Details -->
-                                    <div class="work-details-box">
-
-                                        <div class="details-icon">
-                                            <i class="bi bi-card-text"></i>
-                                        </div>
-
-                                        <div>
-
-                                            <span class="details-label">WORK DETAILS
-                                            </span>
-
-                                            <p class="work-description">
-                                                <%# Eval("work_details") %>
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <!-- Footer -->
-                                    <div class="work-log-footer">
-
-                                        <span class="work-date">
-
-                                            <i class="bi bi-calendar3"></i>
-
-                                            <%# Eval("create_date") %>
-
-                                        </span>
-
-                                        <span class="work-status">
-
-                                            <span class="status-dot"></span>
-
-                                            Work Logged
-
-                                        </span>
-
-                                    </div>
-
+                                <!-- Status -->
+                                <div class="work-status">
+                                    <span class='<%# Convert.ToString(Eval("statuss")) == "Done" ? "work-status-badge done" : "work-status-badge pending" %>'>
+                                        <%# Eval("statuss") %>
+                                    </span>
                                 </div>
+
+                                <!-- Remark -->
+                                <div class="work-details-content">
+                                    <span class="details-label">REMARK</span>
+                                    <p class="work-description">
+                                        <%# Eval("remark") %>
+                                    </p>
+                                </div>
+
+
 
                             </div>
 
@@ -961,6 +1123,7 @@
                     </asp:Repeater>
 
                 </div>
+
 
             </div>
 

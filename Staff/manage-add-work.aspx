@@ -49,6 +49,7 @@
 
                             <th>Client Name</th>
                             <th>Work</th>
+                            <th>Remark</th>
                             <th>Date</th>
                             <th>Time</th>
                             <th class="text-end">Action</th>
@@ -62,6 +63,7 @@
                                 <tr>
                                     <td class="fw-semibold"><%# Eval("client_id") %></td>
                                     <td><%# Eval("work_details") %></td>
+                                    <td><%# Eval("remark") %></td>
                                     <td><%# Eval("create_date") %></td>
                                     <td><%# Eval("working_time") %></td>
                                     <td class="text-end">

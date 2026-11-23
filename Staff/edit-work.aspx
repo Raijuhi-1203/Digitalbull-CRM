@@ -53,6 +53,11 @@
                             <asp:TextBox runat="server" class="form-control" ID="wtime"></asp:TextBox>
                         </div>
 
+                        <div class="col-md-12">
+                            <label class="form-label" for="notes">Remark</label>
+                            <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="remark"></asp:TextBox>
+                        </div>
+
                         <div class="col-12">
                             <label class="form-label" for="notes">Work Details</label>
                             <asp:TextBox ClientIDMode="Static" runat="server" class="form-control" ID="details" TextMode="MultiLine"></asp:TextBox>

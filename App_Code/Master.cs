@@ -603,9 +603,10 @@ public class Master
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into add_staff_work (staff_id,client_id,work_details,working_time,create_date,create_time) values (@staff_id,@client_id,@work_details,@working_time,@create_date,@create_time)";
+            cmd.CommandText = "insert into add_staff_work (statuss,staff_id,client_id,work_details,working_time,create_date,create_time) values (@statuss,@staff_id,@client_id,@work_details,@working_time,@create_date,@create_time)";
             cmd.CommandType = CommandType.Text;
 
+            cmd.Parameters.AddWithValue("@statuss", "Done");
             cmd.Parameters.AddWithValue("@staff_id", staff_id);
             cmd.Parameters.AddWithValue("@client_id", client_id);
             cmd.Parameters.AddWithValue("@work_details", work_details);
@@ -623,7 +624,7 @@ public class Master
         return (RowsAffected);
     }
 
-    public int Edit_Work(string id, string client_id, string work_details, string working_time)
+    public int Edit_Work(string id, string client_id, string work_details, string working_time, string remark)
     {
         con.Close();
         con.Open();
@@ -632,14 +633,13 @@ public class Master
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "update add_staff_work set client_id=@client_id,work_details=@work_details,working_time=@working_time where id=@id";
+            cmd.CommandText = "update add_staff_work set client_id=@client_id,work_details=@work_details,working_time=@working_time,remark=@remark where id=@id";
             cmd.CommandType = CommandType.Text;
-
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@client_id", client_id);
             cmd.Parameters.AddWithValue("@work_details", work_details);
             cmd.Parameters.AddWithValue("@working_time", working_time);
-
+            cmd.Parameters.AddWithValue("@remark", remark);
             RowsAffected = cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -937,6 +937,54 @@ public class Master
             cmd.Parameters.AddWithValue("@create_date", create_date);
             cmd.Parameters.AddWithValue("@create_time", create_time);
 
+            RowsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+        return (RowsAffected);
+    }
+
+    public int Status_Change_Work_Staff(string id, string statuss)
+    {
+        con.Close();
+        con.Open();
+        int RowsAffected = 0;
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "update add_staff_work set statuss=@statuss where id=@id";
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@statuss", statuss);
+
+            RowsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+        return (RowsAffected);
+    }
+
+    public int Add_Remark(string id, string remark)
+    {
+        con.Close();
+        con.Open();
+        int RowsAffected = 0;
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "update add_staff_work set remark=@remark where id=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@remark", remark);
             RowsAffected = cmd.ExecuteNonQuery();
             con.Close();
         }

@@ -104,9 +104,16 @@ public partial class Admin_dashboard : System.Web.UI.Page
         Repeater3.DataBind();
     }
 
+    //private void BindData()
+    //{
+    //    rptbinddata.DataSource = GetData("SELECT * FROM assign_work where staff_id='" + Session["name"].ToString() + "' and create_date='"+ DateTime.Now.ToString("yyyy-MM-dd")+"'");
+    //    rptbinddata.DataBind();
+    //}
+    
     private void BindData()
     {
-        rptbinddata.DataSource = GetData("SELECT * FROM assign_work where staff_id='" + Session["name"].ToString() + "' and create_date='"+ DateTime.Now.ToString("yyyy-MM-dd")+"'");
+       // rptbinddata.DataSource = GetData("SELECT * FROM add_staff_work where staff_id='" + Session["name"].ToString() + "' and create_date='"+ DateTime.Now.ToString("yyyy-MM-dd")+ "' and statuss='Pending'");
+        rptbinddata.DataSource = GetData("SELECT * FROM add_staff_work where staff_id='" + Session["name"].ToString() + "' and statuss='Pending' AND CAST(create_date AS DATE) <= CAST(GETDATE() AS DATE)");
         rptbinddata.DataBind();
     }
     
@@ -144,6 +151,38 @@ public partial class Admin_dashboard : System.Web.UI.Page
             Context.ApplicationInstance.CompleteRequest();
             return;
         }
+
+        if (e.CommandName == "SubmitRemark")
+        {
+            string id = e.CommandArgument.ToString();
+            TextBox txtRemark = (TextBox)e.Item.FindControl("txtRemark");
+            string remark = txtRemark.Text.Trim();
+            int success = mst.Add_Remark(id, remark);
+           
+            if (success > 0)
+            {
+                ShowMessage("Data have been updated.", MessageType.Success);
+                BindData();
+                BindData2();
+                BindClient();
+                BindClient2();
+            }
+        }
+        if (e.CommandName == "SetDone")
+        {
+            string id = e.CommandArgument.ToString();
+            int success = mst.Status_Change_Work_Staff(id, "Done");
+
+            if (success > 0)
+            {
+                ShowMessage("Data have been updated.", MessageType.Success);
+                BindData();
+                BindData2();
+                BindClient();
+                BindClient2();
+            }
+        }
+
     }
 
     protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)

@@ -40,7 +40,7 @@ public partial class Admin_staff_summary : System.Web.UI.Page
 
     private void BindData()
     {
-        rptbinddata.DataSource = GetData("SELECT * FROM add_staff_work where staff_id='" + Request.QueryString[0] + "'");
+        rptbinddata.DataSource = GetData("SELECT * FROM add_staff_work where staff_id='" + Request.QueryString[0] + "' and create_date='" + DateTime.Now.ToString("yyyy-MM-dd") +"'");
         rptbinddata.DataBind();
     }
 

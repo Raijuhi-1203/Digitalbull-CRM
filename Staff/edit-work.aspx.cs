@@ -39,6 +39,7 @@ public partial class Staff_edit_work : System.Web.UI.Page
                 {
                     details.Text = dr_data["work_details"].ToString();
                     wtime.Text = dr_data["working_time"].ToString();
+                    remark.Text = dr_data["remark"].ToString();
                     dblclient.SelectedValue = dr_data["client_id"].ToString();
                 }
                 dr_data.Close();
@@ -84,7 +85,7 @@ public partial class Staff_edit_work : System.Web.UI.Page
     {
         if (details.Text.Length > 0 && wtime.Text.Length > 0)
         {
-            int success = mst.Edit_Work(Request.QueryString[0], dblclient.SelectedItem.Text, details.Text, wtime.Text);
+            int success = mst.Edit_Work(Request.QueryString[0], dblclient.SelectedItem.Text, details.Text, wtime.Text, remark.Text);
 
             if (success > 0)
             {

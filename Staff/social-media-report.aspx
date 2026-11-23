@@ -38,7 +38,139 @@
             font-weight: 600;
         }
     </style>
-    
+
+    <style>
+        /* Social Media Summary Cards */
+        .social-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .social-summary-card {
+            background: #fff;
+            border: 1px solid #edf0f5;
+            border-radius: 9px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 0;
+            box-shadow: 0 2px 7px rgba(0,0,0,0.04);
+        }
+
+        .social-summary-icon {
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .social-summary-info {
+            min-width: 0;
+        }
+
+            .social-summary-info h4 {
+                font-size: 17px;
+                font-weight: 700;
+                margin: 0;
+                color: #202938;
+                line-height: 1.3;
+            }
+
+            .social-summary-info p {
+                font-size: 11px;
+                color: #7b8494;
+                margin: 2px 0 0;
+                white-space: nowrap;
+            }
+
+        .summary-views {
+            background: #e8f0ff;
+            color: #3478ed;
+        }
+
+        .summary-subscribe {
+            background: #ffe9e9;
+            color: #e94343;
+        }
+
+        .summary-likes {
+            background: #fff0e5;
+            color: #f28b35;
+        }
+
+        .summary-comments {
+            background: #e9e6ff;
+            color: #7659d6;
+        }
+
+        .summary-followers {
+            background: #e2f8f0;
+            color: #16a477;
+        }
+
+        .summary-share {
+            background: #e4f5ff;
+            color: #1597cf;
+        }
+
+        .summary-reviews {
+            background: #fff5d9;
+            color: #d49b19;
+        }
+
+        @media(max-width: 992px) {
+            .social-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 480px) {
+            .social-summary-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 9px;
+            }
+
+            .social-summary-card {
+                padding: 12px 9px;
+                gap: 8px;
+            }
+
+            .social-summary-icon {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+                font-size: 16px;
+            }
+
+            .social-summary-info h4 {
+                font-size: 18px;
+            }
+
+            .social-summary-info p {
+                font-size: 11px;
+            }
+        }
+        /* Responsive */
+        @media(max-width: 1100px) {
+            .social-summary-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media(max-width: 576px) {
+            .social-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
     <!-- Toast Container -->
     <div id="toastContainer" class="toast-container">
 
@@ -72,6 +204,81 @@
                     <h3>Manage Social Media</h3>
                 </div>
             </div>
+        </div>
+
+        <!-- Social Media Summary -->
+        <div class="social-summary-grid">
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-views">
+                    <i class="fa fa-eye"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>1,000</h4>
+                    <p>Target Views</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-subscribe">
+                    <i class="fa fa-youtube-play"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>50</h4>
+                    <p>Target Subscriber</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-likes">
+                    <i class="fa fa-heart"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>100</h4>
+                    <p>Target Likes</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-comments">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>30</h4>
+                    <p>Target Comments</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-followers">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>50</h4>
+                    <p>Target Followers</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-share">
+                    <i class="fa fa-share-alt"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>60</h4>
+                    <p>Target Group Share</p>
+                </div>
+            </div>
+
+            <div class="social-summary-card">
+                <div class="social-summary-icon summary-reviews">
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="social-summary-info">
+                    <h4>20</h4>
+                    <p>Target GMB Reviews</p>
+                </div>
+            </div>
+
         </div>
 
         <section class="panel">

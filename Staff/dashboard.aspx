@@ -219,42 +219,330 @@
             border-color: #07995d;
         }
 
-        /* Activity */
-        .activity-card {
-            height: 96px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            overflow: hidden;
-            position: relative;
-            background: linear-gradient( 100deg, #f6fbff, #fff 60%, #f0eaff );
+        /* Activity Panel */
+
+        .activity-panel {
+            background: #fff;
+            border: 1px solid #edf0f4;
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
         }
 
-        .activity-content {
+        .activity-header {
             display: flex;
             align-items: center;
-            gap: 15px;
-            z-index: 1;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
-            .activity-content h2 {
-                margin: 0 0 4px;
-                font-size: 19px;
+        .activity-header-icon {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f3ff;
+            color: #5969d9;
+            border-radius: 8px;
+            font-size: 17px;
+        }
+
+        .activity-header h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .activity-header p {
+            font-size: 11px;
+            color: #9299a5;
+            margin: 2px 0 0;
+        }
+
+        /* Table */
+        .activity-table {
+            width: 100%;
+            min-width: 1000px;
+            table-layout: auto;
+        }
+
+            .activity-table thead th {
+                background: #f8f9fc;
+                color: #737d90;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .4px;
+                padding: 10px 9px;
+                white-space: nowrap;
+                border-bottom: 1px solid #edf0f4;
             }
 
-            .activity-content p {
-                margin: 0;
-                color: #7185a6;
+            .activity-table tbody td {
+                padding: 10px;
                 font-size: 11px;
+                color: #475467;
+                border-bottom: 1px solid #f0f1f4;
+                white-space: nowrap;
+                vertical-align: middle;
             }
 
-        .activity-graphic {
-            position: absolute;
-            right: 40px;
-            bottom: -8px;
-            font-size: 65px;
-            opacity: .7;
+            .activity-table tbody tr:hover {
+                background: #fafbff;
+            }
+
+        /* Staff */
+        .activity-staff {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: #344054;
+        }
+
+            .activity-staff i {
+                font-size: 16px;
+                color: #6575d9;
+            }
+
+        /* Time */
+        .activity-time {
+            color: #778195 !important;
+        }
+
+        /* Details */
+        .activity-details {
+            min-width: 250px;
+            max-width: 450px;
+            white-space: normal !important;
+            overflow: visible;
+            text-overflow: unset;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-height: 1.6;
+            font-size: 12px;
+            color: #475467;
+        }
+
+        /* Status */
+        .activity-status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .status-btn {
+            border: 1px solid #e6e9ef;
+            background: transparent;
+            border-radius: 5px;
+            padding: 5px 8px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+            .status-btn.pending {
+                color: #d18a20;
+            }
+
+                .status-btn.pending.active {
+                    background: #fff5df;
+                    border-color: #f1d59e;
+                }
+
+            .status-btn.done {
+                color: #159768;
+                background: #1987542e;
+                border-color: #159768;
+            }
+
+                .status-btn.done.active {
+                    background: #e9f8f1;
+                    border-color: #a9e4ca;
+                }
+
+        /* Remark */
+        .remark-input {
+            width: 150px;
+            height: 29px;
+            padding: 4px 8px;
+            border: 1px solid #e5e8ef;
+            border-radius: 5px;
+            font-size: 11px;
+            outline: none;
+        }
+
+            .remark-input:focus {
+                border-color: #6575d9;
+            }
+
+        /* Submit */
+        .remark-submit {
+            background: #5969d9;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+            padding: 6px 12px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+            .remark-submit:hover {
+                background: #4555c5;
+            }
+
+
+        /* Staff */
+        .activity-staff-box {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+            font-size: 12px;
+            color: #344054;
+        }
+
+            .activity-staff-box i {
+                font-size: 17px;
+                color: #6875d9;
+            }
+
+            .activity-staff-box strong {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+        /* Working Time */
+        .activity-time {
+            font-size: 11px;
+            color: #747d8d;
+            white-space: nowrap;
+        }
+
+            .activity-time i {
+                color: #8993a5;
+                margin-right: 3px;
+            }
+
+        /* Work Details */
+        .activity-work {
+            font-size: 12px;
+            color: #475467;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Status */
+        .activity-status {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-btn {
+            border: 1px solid #e8eaf0;
+            background: #fff;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+            .status-btn.pending {
+                color: #d18a20;
+            }
+
+                .status-btn.pending.active {
+                    background: #fff5df;
+                    border-color: #f4d69b;
+                }
+
+            .status-btn.done {
+                color: #159768;
+            }
+
+                .status-btn.done.active {
+                    background: #e9f8f1;
+                    border-color: #a9e4ca;
+                }
+
+        /* Remark */
+        .activity-remark {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-width: 0;
+        }
+
+        .remark-input {
+            width: 100%;
+            min-width: 0;
+            height: 30px;
+            border: 1px solid #e6e9ef;
+            border-radius: 5px;
+            padding: 4px 8px;
+            font-size: 11px;
+            outline: none;
+        }
+
+            .remark-input:focus {
+                border-color: #7180e5;
+            }
+
+        .remark-submit {
+            height: 30px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background: #5969d9;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+            .remark-submit:hover {
+                background: #4555c5;
+            }
+
+        /* Mobile Responsive */
+        @media(max-width: 991px) {
+            .activity-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .activity-work {
+                grid-column: 1 / -1;
+                white-space: normal;
+            }
+
+            .activity-remark {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .activity-row {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-work,
+            .activity-remark {
+                grid-column: auto;
+            }
+
+            .activity-status {
+                flex-wrap: wrap;
+            }
         }
 
         /* Recent Client */
@@ -687,13 +975,10 @@
 
             <div class="section-heading">
                 <div class="section-icon">▣</div>
-
                 <div>
                     <h2>Today's Social Media Work</h2>
                     <p>Check the latest posts and their status for all clients.</p>
                 </div>
-
-
             </div>
 
             <table class="work-table">
@@ -790,38 +1075,112 @@
             </table>
         </section>
 
-        <!-- Activity -->
-        <section class="row g-3 mt-1">
+        <!-- Compact Activity Section -->
 
-            <div class="col-12">
-                <div class="panel h-100">
-                    <div class="panel-header">
-                        <div>
-                            <h2 class="h5 mb-1 section-title"><i class="bi bi-activity" aria-hidden="true"></i><span>Activity</span></h2>
-                            <p class="text-muted mb-0">Recent operational updates.</p>
-                        </div>
+        <section class="mt-3">
+            <div class="activity-panel">
+
+                <div class="activity-header">
+                    <div class="activity-header-icon">
+                        <i class="bi bi-activity"></i>
                     </div>
-
-                    <div class="activity-list">
-
-                        <asp:Repeater ID="rptbinddata" runat="server" OnItemCommand="rptbinddata_ItemCommand">
-                            <ItemTemplate>
-
-                                <div class="activity-item">
-                                    <span class="activity-dot bg-primary"></span>
-                                    <div>
-                                        <p class="mb-1 fw-semibold"><%# Eval("staff_id") %></p>
-                                        <p class="text-muted small mb-0"><%# Eval("work_details") %></p>
-                                    </div>
-                                </div>
-
-                            </ItemTemplate>
-                        </asp:Repeater>
-
+                    <div>
+                        <h2>Activity</h2>
+                        <p>Recent operational updates and staff work progress.</p>
                     </div>
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table activity-table align-middle mb-0">
+
+                        <thead>
+                            <tr>
+                                <th>Client</th>
+                                <th>Working Time</th>
+                                <th>Work Details</th>
+                                <th>Status</th>
+                                <th>Remark</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <asp:Repeater ID="rptbinddata"
+                                runat="server"
+                                OnItemCommand="rptbinddata_ItemCommand">
+
+                                <ItemTemplate>
+
+                                    <tr>
+
+                                        <!-- Staff -->
+                                        <td>
+                                            <div class="activity-staff">
+                                                <i class="bi bi-person-circle"></i>
+                                                <%# Eval("client_id") %>
+                                            </div>
+                                        </td>
+
+                                        <!-- Working Time -->
+                                        <td class="activity-time">
+                                            <i class="bi bi-clock"></i>
+                                            <%# Eval("working_time") %>
+                                        </td>
+
+                                        <!-- Work Details -->
+                                        <td class="activity-details">
+                                            <%# Eval("work_details") %>
+                                        </td>
+
+                                        <!-- Status -->
+                                        <td>
+                                            <div class="activity-status">
+
+                                                <asp:Button ID="btnDone"
+                                                    runat="server"
+                                                    Text="Done"
+                                                    CssClass='<%# Convert.ToString(Eval("statuss")) == "Done" ? "status-btn done active" : "status-btn done" %>'
+                                                    CommandName="SetDone"
+                                                    CommandArgument='<%# Eval("id") %>' />
+
+                                            </div>
+                                        </td>
+
+                                        <!-- Remark -->
+                                        <td>
+                                            <asp:TextBox ID="txtRemark"
+                                                runat="server"
+                                                CssClass="remark-input"
+                                                TextMode="MultiLine"
+                                                Text='<%# Eval("remark") %>'
+                                                placeholder="Enter remark..." />
+                                        </td>
+
+                                        <!-- Action -->
+                                        <td>
+                                            <asp:Button ID="btnSubmitRemark"
+                                                runat="server"
+                                                Text="Submit"
+                                                CssClass="remark-submit"
+                                                CommandName="SubmitRemark"
+                                                CommandArgument='<%# Eval("id") %>' />
+                                        </td>
+
+                                    </tr>
+
+                                </ItemTemplate>
+
+                            </asp:Repeater>
+
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </section>
+
 
         <!-- Recent Assign Client -->
         <section class="dashboard-card recent-card">
